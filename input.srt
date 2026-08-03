@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:02,000
+To process just one word,
+
+2
+00:00:02,000 --> 00:00:04,000
+traditional AI models must activate
+
+3
+00:00:04,000 --> 00:00:06,000
+every single neural connection they have.
+
+4
+00:00:06,000 --> 00:00:08,000
+These dense networks require
+
+5
+00:00:08,000 --> 00:00:10,000
+massive, expensive cloud servers.
+
+6
+00:00:10,000 --> 00:00:12,000
+So how does an architecture called
+
+7
+00:00:12,000 --> 00:00:14,000
+Mixture of Experts bypass this bottleneck?
+
+8
+00:00:14,000 --> 00:00:16,000
+Let's feed the word
+
+9
+00:00:16,000 --> 00:00:18,000
+Calculate into Google's 26 billion parameter
+
+10
+00:00:18,000 --> 00:00:20,000
+Gemma 4 model for math.
+
+11
+00:00:20,000 --> 00:00:22,000
+The model holds a massive
+
+12
+00:00:22,000 --> 00:00:24,000
+26 billion parameters in its memory,
+
+13
+00:00:24,000 --> 00:00:26,000
+but it only turns on the
+
+14
+00:00:26,000 --> 00:00:28,000
+4 billion parameters actually needed
+
+15
+00:00:28,000 --> 00:00:30,000
+for that exact word.
+
+16
+00:00:30,000 --> 00:00:32,000
+Because the other 22 billion parameters
+
+17
+00:00:32,000 --> 00:00:34,000
+stay completely dormant,
+
+18
+00:00:34,000 --> 00:00:36,000
+the computational workload drops drastically.
+
+19
+00:00:36,000 --> 00:00:38,000
+You get the deep reasoning quality
+
+20
+00:00:38,000 --> 00:00:40,000
+of a giant network running at the
+
+21
+00:00:40,000 --> 00:00:42,000
+speed of a tiny one, which means
+
+22
+00:00:42,000 --> 00:00:44,000
+you no longer need to rent out an expensive
+
+23
+00:00:44,000 --> 00:00:46,000
+massive cloud data center to handle
+
+24
+00:00:46,000 --> 00:00:48,000
+heavy reasoning. You can run
+
+25
+00:00:48,000 --> 00:00:50,000
+Gemma 4's powerful 26 billion parameter
+
+26
+00:00:50,000 --> 00:00:52,000
+AI entirely locally,
+
+27
+00:00:52,000 --> 00:00:54,000
+directly on a single consumer graphics card.
+

@@ -12,29 +12,31 @@ Write-Host ""
 
 # 1. 配置 Antigravity 全域 AI Agent 繁體中文 Rule 規範
 Write-Host "[1/3] 正在安裝 Antigravity 全域繁體中文 AI 規則..." -ForegroundColor Blue
-$RuleDir = Join-Path $env:USERPROFILE ".gemini\config\rules"
+$GeminiDir = Join-Path $env:USERPROFILE ".gemini\config"
+$RuleDir = Join-Path $GeminiDir "rules"
 if (!(Test-Path $RuleDir)) {
     New-Item -ItemType Directory -Path $RuleDir -Force | Out-Null
 }
 
-$RuleFile = Join-Path $RuleDir "traditional_chinese.md"
 $RuleContent = @"
-# 繁體中文語言與對話規範 (Traditional Chinese Rules)
+# 繁體中文對話與回應規範 (Traditional Chinese Rule)
 
-## 語言與回應要求
-1. **主要語言**：系統與 AI Agent 在所有對話、說明、提示、分析報告、計畫書及文檔輸出中，必須一律使用**正體 / 繁體中文** (Taiwan / Traditional Chinese)。
-2. **專業術語**：繁體中文技術用語應符合臺灣與繁體中文習慣（例如：程式碼、專案、伺服器、數據/資料、網路/網絡、執行檔、模組、函數/函式等）。
-3. **程式碼與註解**：
-   - 程式碼內部關鍵註解與說明文件 (README, Documentation) 預設使用繁體中文說明。
-   - 程式碼變數名與語法維持標準英文規範。
-4. **Artifacts 與計畫書**：所有產出的 Artifacts (如 implementation_plan.md, walkthrough.md) 必須全篇以繁體中文撰寫。
+- **主要語言**：所有 AI Agent 的對話、說明、提示、分析報告、計畫書及文檔輸出，必須一律使用 **正體 / 繁體中文** (Taiwan / Traditional Chinese)。
+- **專業術語**：請使用臺灣與繁體中文標準用語（例如：程式碼、專案、伺服器、數據/資料、網路、執行檔、函式/函數、模組等）。
+- **計畫書與報告**：所有產出的 Artifacts (如 implementation_plan.md, walkthrough.md) 必須全篇以繁體中文撰寫。
 "@
 
+$GeminiFile = Join-Path $GeminiDir "GEMINI.md"
+$AgentsFile = Join-Path $GeminiDir "AGENTS.md"
+$RuleFile = Join-Path $RuleDir "traditional_chinese.md"
+
+[System.IO.File]::WriteAllText($GeminiFile, $RuleContent, [System.Text.Encoding]::UTF8)
+[System.IO.File]::WriteAllText($AgentsFile, $RuleContent, [System.Text.Encoding]::UTF8)
 [System.IO.File]::WriteAllText($RuleFile, $RuleContent, [System.Text.Encoding]::UTF8)
-Write-Host "✓ 全域 AI 規則已設定完畢：$RuleFile" -ForegroundColor Green
+Write-Host "✓ 全域 AI 規則已設定完畢：$GeminiFile" -ForegroundColor Green
 Write-Host ""
 
-# 2. 配置 Antigravity IDE UI 繁體中文設定 (settings.json / argv.json)
+# 2. 配置 Antigravity IDE UI 繁體中文設定 (locale.json / settings.json / argv.json)
 Write-Host "[2/3] 正在配置 Antigravity IDE 繁體中文介面設定..." -ForegroundColor Blue
 
 $ConfigPaths = @(
@@ -49,6 +51,10 @@ foreach ($ConfDir in $ConfigPaths) {
         if (!(Test-Path $ConfDir)) {
             New-Item -ItemType Directory -Path $ConfDir -Force | Out-Null
         }
+
+        # 設定 locale.json
+        $LocaleFile = Join-Path $ConfDir "locale.json"
+        Set-Content -Path $LocaleFile -Value '{"locale": "zh-tw"}' -Encoding UTF8
 
         # 設定 argv.json
         $ArgvFile = Join-Path $ConfDir "argv.json"
@@ -85,7 +91,7 @@ Write-Host ""
 Write-Host "[3/3] 正在嘗試安裝 IDE 繁體中文語言包擴充套件..." -ForegroundColor Blue
 
 $Installed = $false
-$CliTools = @("antigravity", "agy", "code")
+$CliTools = @("antigravity", "code")
 
 foreach ($Cmd in $CliTools) {
     $CommandExists = Get-Command $Cmd -ErrorAction SilentlyContinue
@@ -97,12 +103,12 @@ foreach ($Cmd in $CliTools) {
 }
 
 if (-not $Installed) {
-    Write-Host "未偵測到全域 CLI 命令 (antigravity/agy)，請確保在 IDE 啟動後於 Extension 搜尋安裝「Chinese (Traditional) Language Pack」。" -ForegroundColor Yellow
+    Write-Host "提示：若選單未自動變更中文，請在 IDE 中按下 Ctrl+Shift+P 搜尋「Configure Display Language」選取「zh-tw (繁體中文)」。" -ForegroundColor Yellow
 }
 
 Write-Host ""
 Write-Host "====================================================" -ForegroundColor Green
 Write-Host " 🎉 Antigravity 繁體中文介面與語系設定完成！ " -ForegroundColor Green
-Write-Host " 請重啟 Antigravity IDE / App 以套用完整繁體中文介面。" -ForegroundColor Green
+Write-Host " 請完全關閉並重啟 Antigravity IDE / App 以套用變更。" -ForegroundColor Green
 Write-Host "====================================================" -ForegroundColor Green
 Write-Host ""

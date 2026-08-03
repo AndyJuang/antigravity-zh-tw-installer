@@ -1,0 +1,189 @@
+{
+ "tts_provider": "kokoro-direct",
+ "voice_id": "zf_xiaobei",
+ "bgm": null,
+ "voices": [
+  {
+   "id": "1",
+   "path": "assets/voice/1.wav",
+   "duration_s": 1.771,
+   "words": []
+  },
+  {
+   "id": "2",
+   "path": "assets/voice/2.wav",
+   "duration_s": 1.408,
+   "words": []
+  },
+  {
+   "id": "3",
+   "path": "assets/voice/3.wav",
+   "duration_s": 1.216,
+   "words": []
+  },
+  {
+   "id": "4",
+   "path": "assets/voice/4.wav",
+   "duration_s": 1.856,
+   "words": []
+  },
+  {
+   "id": "5",
+   "path": "assets/voice/5.wav",
+   "duration_s": 2.56,
+   "words": []
+  },
+  {
+   "id": "6",
+   "path": "assets/voice/6.wav",
+   "duration_s": 2.091,
+   "words": []
+  },
+  {
+   "id": "7",
+   "path": "assets/voice/7.wav",
+   "duration_s": 2.261,
+   "words": []
+  },
+  {
+   "id": "8",
+   "path": "assets/voice/8.wav",
+   "duration_s": 1.323,
+   "words": []
+  },
+  {
+   "id": "9",
+   "path": "assets/voice/9.wav",
+   "duration_s": 1.493,
+   "words": []
+  },
+  {
+   "id": "10",
+   "path": "assets/voice/10.wav",
+   "duration_s": 1.92,
+   "words": []
+  },
+  {
+   "id": "11",
+   "path": "assets/voice/11.wav",
+   "duration_s": 1.707,
+   "words": []
+  },
+  {
+   "id": "12",
+   "path": "assets/voice/12.wav",
+   "duration_s": 1.749,
+   "words": []
+  },
+  {
+   "id": "13",
+   "path": "assets/voice/13.wav",
+   "duration_s": 1.835,
+   "words": []
+  },
+  {
+   "id": "14",
+   "path": "assets/voice/14.wav",
+   "duration_s": 1.515,
+   "words": []
+  },
+  {
+   "id": "15",
+   "path": "assets/voice/15.wav",
+   "duration_s": 2.389,
+   "words": []
+  },
+  {
+   "id": "16",
+   "path": "assets/voice/16.wav",
+   "duration_s": 1.493,
+   "words": []
+  },
+  {
+   "id": "17",
+   "path": "assets/voice/17.wav",
+   "duration_s": 2.624,
+   "words": []
+  },
+  {
+   "id": "18",
+   "path": "assets/voice/18.wav",
+   "duration_s": 2.176,
+   "words": []
+  },
+  {
+   "id": "19",
+   "path": "assets/voice/19.wav",
+   "duration_s": 2.496,
+   "words": []
+  },
+  {
+   "id": "20",
+   "path": "assets/voice/20.wav",
+   "duration_s": 1.728,
+   "words": []
+  },
+  {
+   "id": "21",
+   "path": "assets/voice/21.wav",
+   "duration_s": 1.749,
+   "words": []
+  },
+  {
+   "id": "22",
+   "path": "assets/voice/22.wav",
+   "duration_s": 2.581,
+   "words": []
+  },
+  {
+   "id": "23",
+   "path": "assets/voice/23.wav",
+   "duration_s": 2.176,
+   "words": []
+  },
+  {
+   "id": "24",
+   "path": "assets/voice/24.wav",
+   "duration_s": 2.027,
+   "words": []
+  },
+  {
+   "id": "25",
+   "path": "assets/voice/25.wav",
+   "duration_s": 1.557,
+   "words": []
+  },
+  {
+   "id": "26",
+   "path": "assets/voice/26.wav",
+   "duration_s": 1.749,
+   "words": []
+  },
+  {
+   "id": "27",
+   "path": "assets/voice/27.wav",
+   "duration_s": 2.368,
+   "words": []
+  },
+  {
+   "id": "28",
+   "path": "assets/voice/28.wav",
+   "duration_s": 1.984,
+   "words": []
+  },
+  {
+   "id": "29",
+   "path": "assets/voice/29.wav",
+   "duration_s": 2.005,
+   "words": []
+  },
+  {
+   "id": "30",
+   "path": "assets/voice/30.wav",
+   "duration_s": 1.664,
+   "words": []
+  }
+ ],
+ "sfx": [],
+ "total_duration_s": 57.471
+}
